@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Web Developer Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BE_XML_DataGrid_POC", "BE_XML_DataGrid_POC\BE_XML_DataGrid_POC.csproj", "{968657B5-DAA8-4553-B0DF-55A9E6C7297A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BE_XML_DataGrid_POC.Web", "BE_XML_DataGrid_POC.Web\BE_XML_DataGrid_POC.Web.csproj", "{A4332C66-8F14-4663-A80A-E8FBF295838D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{968657B5-DAA8-4553-B0DF-55A9E6C7297A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{968657B5-DAA8-4553-B0DF-55A9E6C7297A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{968657B5-DAA8-4553-B0DF-55A9E6C7297A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{968657B5-DAA8-4553-B0DF-55A9E6C7297A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4332C66-8F14-4663-A80A-E8FBF295838D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4332C66-8F14-4663-A80A-E8FBF295838D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4332C66-8F14-4663-A80A-E8FBF295838D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4332C66-8F14-4663-A80A-E8FBF295838D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
