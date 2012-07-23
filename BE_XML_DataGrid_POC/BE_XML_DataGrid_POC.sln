@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Web Developer Express 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BE_XML_DataGrid_POC", "BE_XML_DataGrid_POC\BE_XML_DataGrid_POC.csproj", "{968657B5-DAA8-4553-B0DF-55A9E6C7297A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A4332C66-8F14-4663-A80A-E8FBF295838D} = {A4332C66-8F14-4663-A80A-E8FBF295838D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BE_XML_DataGrid_POC.Web", "BE_XML_DataGrid_POC.Web\BE_XML_DataGrid_POC.Web.csproj", "{A4332C66-8F14-4663-A80A-E8FBF295838D}"
 EndProject

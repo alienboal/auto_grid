@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="BE_XML_DataGrid_POC.Web.Service" CodeBehind="Service.svc.cs" %>

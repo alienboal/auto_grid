@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
+
+using BE_XML_DataGrid_POC.BusinessLogic;
 namespace BE_XML_DataGrid_POC
 {
     public partial class MainPage : UserControl
@@ -17,6 +19,15 @@ namespace BE_XML_DataGrid_POC
         public MainPage()
         {
             InitializeComponent();
+
+            Driver driver = Driver.GetInstance();
+
+            driver.RunTests();
+        }
+
+        private void btnLoadFile_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
