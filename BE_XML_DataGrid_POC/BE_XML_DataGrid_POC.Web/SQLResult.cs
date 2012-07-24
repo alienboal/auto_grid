@@ -10,16 +10,15 @@ namespace BE_XML_DataGrid_POC.Web
 {
 
     [DataContract(Name = "SQLResult", Namespace = "BE_XML_DataGrid")]
-  
+
     public class SQLResult
     {
         #region private members
 
-        private string xmlQuerryResult;
-        private Dictionary<string, Type> tableColumns;
-
+        private string xmlQuerryResult; 
+        private List<ColumnType> columns;
         #endregion
-        
+
         #region properties
 
         [DataMember(Name = "XmlQuerryResult")]
@@ -33,28 +32,29 @@ namespace BE_XML_DataGrid_POC.Web
             {
             }
         }
+         
 
-
-        [DataMember(Name = "TableColumns")]
-        public Dictionary<string, Type> TableColumns
+        [DataMember(Name = "Columns")]
+        public List<ColumnType> Columns
         {
             get
             {
-                return tableColumns;
+                return columns;
             }
             set
             {
             }
         }
 
-#endregion
+        #endregion
 
         #region constructor
 
-        public SQLResult(string p_xmlQuerryResult, Dictionary<string, Type> p_tableColumns)
+         
+        public SQLResult(string p_xmlQuerryResult, List<ColumnType> p_columns )
         {
             xmlQuerryResult = p_xmlQuerryResult;
-            tableColumns = p_tableColumns;
+            columns = p_columns; 
 
         }
 

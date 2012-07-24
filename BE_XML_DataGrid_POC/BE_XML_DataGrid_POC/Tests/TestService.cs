@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 
 
 using BE_XML_DataGrid_POC;
-
+using BE_XML_DataGrid_POC.ServiceReferenceDB;
 
 namespace BE_XML_DataGrid_POC.Tests
 {
@@ -62,13 +62,23 @@ namespace BE_XML_DataGrid_POC.Tests
         #region Method GetTableFromDB
         public bool TestMethodGetTableFromDB()
         {
-            serviceClient.GetTableFromDBCompleted += new EventHandler<ServiceReferenceDB.GetTableFromDBCompletedEventArgs>(serviceClient_GetTableFromDBCompleted);
-            serviceClient.GetTableFromDBAsync("select first name from Products");
+            string sCommand = "SELECT TOP 10 Lastname FROM Employees ORDER BY EmployeeID";
+            try
+            {
+                serviceClient.GetTableFromDBCompleted += new EventHandler<ServiceReferenceDB.GetTableFromDBCompletedEventArgs>(serviceClient_GetTableFromDBCompleted);
+                serviceClient.GetTableFromDBAsync(sCommand);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                throw;
+            }
             return true;
         }
 
         void serviceClient_GetTableFromDBCompleted(object sender, ServiceReferenceDB.GetTableFromDBCompletedEventArgs e)
         {
+            
             if (e.Result.XmlQuerryResult != "OK") MessageBox.Show("GetTableFromDB   failed");
         }
         #endregion

@@ -88,7 +88,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Tests\TestMasterDriver.cs" />
+    <Compile Include="Tests\TestDriver.cs" />
     <Compile Include="Tests\TestService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -106,35 +106,24 @@
     <None Include="Service References\ServiceReferenceDB\BE_XML_DataGrid_POC.ServiceReferenceDB.SQLResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReferenceDB\Service.disco" />
+    <None Include="Service References\ServiceReferenceDB\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReferenceDB\configuration.svcinfo" />
+    <None Include="Service References\ServiceReferenceDB\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig" />
     <None Include="Service References\ServiceReferenceDB\Service.wsdl" />
     <None Include="Service References\ServiceReferenceDB\Service.xsd" />
     <None Include="Service References\ServiceReferenceDB\Service1.xsd" />
     <None Include="Service References\ServiceReferenceDB\Service2.xsd" />
-    <None Include="Service References\ServiceReferenceDB\Service3.xsd" />
-    <None Include="Service References\ServiceReferenceDB\Service4.xsd" />
-    <None Include="Service References\ServiceReferenceDB\Service5.xsd" />
-    <Content Include="ServiceReferences.ClientConfig" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReferenceDB\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceDB\Service.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceDB\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceDB\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceDB\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -20,19 +20,19 @@ namespace BE_XML_DataGrid_POC.ServiceReferenceDB {
     [System.Runtime.Serialization.DataContractAttribute(Name="SQLResult", Namespace="BE_XML_DataGrid")]
     public partial class SQLResult : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private System.Collections.Generic.Dictionary<string, System.Type> TableColumnsField;
+        private System.Collections.ObjectModel.ObservableCollection<BE_XML_DataGrid_POC.ServiceReferenceDB.ColumnType> ColumnsField;
         
         private string XmlQuerryResultField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.Dictionary<string, System.Type> TableColumns {
+        public System.Collections.ObjectModel.ObservableCollection<BE_XML_DataGrid_POC.ServiceReferenceDB.ColumnType> Columns {
             get {
-                return this.TableColumnsField;
+                return this.ColumnsField;
             }
             set {
-                if ((object.ReferenceEquals(this.TableColumnsField, value) != true)) {
-                    this.TableColumnsField = value;
-                    this.RaisePropertyChanged("TableColumns");
+                if ((object.ReferenceEquals(this.ColumnsField, value) != true)) {
+                    this.ColumnsField = value;
+                    this.RaisePropertyChanged("Columns");
                 }
             }
         }
@@ -46,6 +46,51 @@ namespace BE_XML_DataGrid_POC.ServiceReferenceDB {
                 if ((object.ReferenceEquals(this.XmlQuerryResultField, value) != true)) {
                     this.XmlQuerryResultField = value;
                     this.RaisePropertyChanged("XmlQuerryResult");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ColumnType", Namespace="BE_XML_DataGrid")]
+    public partial class ColumnType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string NameField;
+        
+        private string TypeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
                 }
             }
         }

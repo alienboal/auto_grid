@@ -1,30 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:52478/Service.svc?xsd=xsd2" namespace="BE_XML_DataGrid" />
-  <xs:element name="Test">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="TestResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="TestResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetTableFromDB">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="p_sqlQuerry" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetTableFromDBResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q1="BE_XML_DataGrid" minOccurs="0" name="GetTableFromDBResult" nillable="true" type="q1:SQLResult" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+<xs:schema xmlns:tns="BE_XML_DataGrid" elementFormDefault="qualified" targetNamespace="BE_XML_DataGrid" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SQLResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Columns" nillable="true" type="tns:ArrayOfColumnType" />
+      <xs:element minOccurs="0" name="XmlQuerryResult" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SQLResult" nillable="true" type="tns:SQLResult" />
+  <xs:complexType name="ArrayOfColumnType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ColumnType" nillable="true" type="tns:ColumnType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfColumnType" nillable="true" type="tns:ArrayOfColumnType" />
+  <xs:complexType name="ColumnType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ColumnType" nillable="true" type="tns:ColumnType" />
 </xs:schema>

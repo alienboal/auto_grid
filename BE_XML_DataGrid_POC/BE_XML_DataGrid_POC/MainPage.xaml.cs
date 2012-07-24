@@ -20,14 +20,20 @@ namespace BE_XML_DataGrid_POC
         {
             InitializeComponent();
 
-            Driver driver = Driver.GetInstance();
 
-            driver.RunTests();
         }
 
         private void btnLoadFile_Click(object sender, RoutedEventArgs e)
         {
 
+
+            Driver driver = Driver.GetInstance();
+
+
+
+
+            // run tests
+            driver.RunTests();
         }
     }
 }

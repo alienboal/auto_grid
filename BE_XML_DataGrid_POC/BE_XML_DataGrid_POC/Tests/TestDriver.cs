@@ -12,7 +12,7 @@ using System.Collections.Generic;
 
 namespace BE_XML_DataGrid_POC.Tests
 {
-    public class TestMasterDriver
+    public class TestDriver
     {
 
         #region private members
@@ -25,7 +25,7 @@ namespace BE_XML_DataGrid_POC.Tests
 
         #region constructor
         
-        public TestMasterDriver()
+        public TestDriver()
         {
 
             #region Init test modules

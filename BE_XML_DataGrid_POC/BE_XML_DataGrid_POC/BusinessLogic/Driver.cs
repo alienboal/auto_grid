@@ -50,9 +50,9 @@ namespace BE_XML_DataGrid_POC.BusinessLogic
         
         public void  RunTests(){
            
-            TestMasterDriver testMasterDriver= new TestMasterDriver();
+            TestDriver testDriver= new TestDriver();
 
-            testMasterDriver.TestAll();
+            testDriver.TestAll();
         }
 
         #endregion

@@ -18,7 +18,9 @@ namespace BE_XML_DataGrid_POC.Web
 
         SQLResult IService.GetTableFromDB(string p_sqlQuerry)
         {
-            return new SQLResult("OK1", new Dictionary<string, Type>());
+
+           SQLResult resultQuerry =DataAccess.getResult(p_sqlQuerry);
+           return resultQuerry;
         }
     }
 }
