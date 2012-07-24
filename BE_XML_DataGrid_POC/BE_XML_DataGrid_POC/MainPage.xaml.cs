@@ -28,12 +28,11 @@ namespace BE_XML_DataGrid_POC
 
 
             Driver driver = Driver.GetInstance();
-
-
-
-
+             
+            //read file
+            driver.ReadConfigurations();
             // run tests
-            driver.RunTests();
+           // driver.RunTests();
         }
     }
 }
