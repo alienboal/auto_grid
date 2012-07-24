@@ -94,7 +94,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Tests\TestConverter.cs" />
     <Compile Include="Tests\TestDriver.cs" />
+    <Compile Include="Tests\TestFileIO.cs" />
     <Compile Include="Tests\TestService.cs" />
   </ItemGroup>
   <ItemGroup>

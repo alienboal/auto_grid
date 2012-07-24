@@ -15,6 +15,10 @@ namespace BE_XML_DataGrid_POC.BusinessLogic
 
     public class FileIO
     {
+        /// <summary>
+        /// !!must use multithreding for background work
+        /// </summary>
+        /// <returns></returns>
         public static FileInfo OpenFile()
         {
             FileInfo ret = null;
@@ -22,7 +26,7 @@ namespace BE_XML_DataGrid_POC.BusinessLogic
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "XML Files (*.xml)|*.xml|All Files (*.*)|*.*";
             open.FilterIndex = 1;
-
+           
             open.Multiselect = false;
 
             bool? openClicked = open.ShowDialog();
@@ -30,7 +34,7 @@ namespace BE_XML_DataGrid_POC.BusinessLogic
             {
 
                 ret = open.File;
-
+               
             }
 
             return ret;

@@ -18,20 +18,23 @@ namespace BE_XML_DataGrid_POC.Tests
         #region private members
 
         TestService testService;
+        TestFileIO testFileIO;
+        TestConverter testConverter;
 
         Dictionary<string, bool> testResults;
 
         #endregion
 
         #region constructor
-        
+
         public TestDriver()
         {
 
             #region Init test modules
 
             testService = new TestService();
-
+            testFileIO = new TestFileIO();
+            testConverter = new TestConverter();
             #endregion
 
 
@@ -46,7 +49,8 @@ namespace BE_XML_DataGrid_POC.Tests
 
             testResults.Add("Service -m- Test ", testService.TestMethodTest());
             testResults.Add("Service -m- GetTableFromDB ", testService.TestMethodGetTableFromDB());
-
+            // testResults.Add("FileIO -m- FileOpen", testFileIO.TestOpenFile());
+            // testResults.Add("Converter-m- XMLtoClasses", testConverter.TestXMLToClasses());
 
             #endregion
         }

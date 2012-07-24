@@ -62,7 +62,7 @@ namespace BE_XML_DataGrid_POC.Tests
         #region Method GetTableFromDB
         public bool TestMethodGetTableFromDB()
         {
-            string sCommand = "SELECT TOP 10 Lastname FROM Employees ORDER BY EmployeeID";
+            string sCommand = "SELECT  TOP 1 LASTNAME FROM EMPLOYEES";
             try
             {
                 serviceClient.GetTableFromDBCompleted += new EventHandler<ServiceReferenceDB.GetTableFromDBCompletedEventArgs>(serviceClient_GetTableFromDBCompleted);
@@ -78,8 +78,9 @@ namespace BE_XML_DataGrid_POC.Tests
 
         void serviceClient_GetTableFromDBCompleted(object sender, ServiceReferenceDB.GetTableFromDBCompletedEventArgs e)
         {
-            
-            if (e.Result.XmlQuerryResult != "OK") MessageBox.Show("GetTableFromDB   failed");
+
+            if (e.Result.XmlQuerryResult !=  "<NewDataSet>\r\n  <Result LASTNAME=\"Buchanan\" />\r\n</NewDataSet>") 
+                MessageBox.Show("GetTableFromDB   failed");
         }
         #endregion
 

@@ -20,7 +20,7 @@ namespace BE_XML_DataGrid_POC.Web
 
 
         // This is your table to hold the result set:
-        static DataTable dataTable = new DataTable();
+        static DataTable dataTable;
 
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace BE_XML_DataGrid_POC.Web
             try
             {
                 cn.Open();
-
+                dataTable = new DataTable();
                 // Fill the data table with select statement's query results:
                 int recordsAffected = da.Fill(dataTable);
 
