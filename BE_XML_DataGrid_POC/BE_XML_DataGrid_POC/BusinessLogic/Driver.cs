@@ -73,10 +73,7 @@ namespace BE_XML_DataGrid_POC.BusinessLogic
                 //convert xml file to object
                 config = Converter.XMLToClasses(stream);
 
-                stream.Close();
-
-              
-
+                stream.Close(); 
                 //get Querry
                 //create Grid
 
@@ -90,16 +87,10 @@ namespace BE_XML_DataGrid_POC.BusinessLogic
         }
         #endregion
 
-
-
-
-
-
+         
 
         #region tests
-
-
-
+         
         public void RunTests()
         {
 

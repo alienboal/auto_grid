@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="BusinessLogic\Converter.cs" />
     <Compile Include="BusinessLogic\Driver.cs" />
+    <Compile Include="BusinessLogic\Factory.cs" />
     <Compile Include="BusinessLogic\FileIO.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -88,6 +89,7 @@
     <Compile Include="Persistance\Config.cs" />
     <Compile Include="Persistance\DBConfig.cs" />
     <Compile Include="Persistance\TableConfig.cs" />
+    <Compile Include="Persistance\TypeCreator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceReferenceDB\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -96,8 +98,10 @@
     </Compile>
     <Compile Include="Tests\TestConverter.cs" />
     <Compile Include="Tests\TestDriver.cs" />
+    <Compile Include="Tests\TestFactory.cs" />
     <Compile Include="Tests\TestFileIO.cs" />
     <Compile Include="Tests\TestService.cs" />
+    <Compile Include="Tests\TestTypeCreator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

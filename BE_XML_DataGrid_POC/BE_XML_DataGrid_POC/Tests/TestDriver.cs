@@ -20,7 +20,8 @@ namespace BE_XML_DataGrid_POC.Tests
         TestService testService;
         TestFileIO testFileIO;
         TestConverter testConverter;
-
+        TestTypeCreator testTypeCreator;
+        TestFactory testFactory;
         Dictionary<string, bool> testResults;
 
         #endregion
@@ -35,6 +36,8 @@ namespace BE_XML_DataGrid_POC.Tests
             testService = new TestService();
             testFileIO = new TestFileIO();
             testConverter = new TestConverter();
+            testTypeCreator = new TestTypeCreator();
+            testFactory = new TestFactory();
             #endregion
 
 
@@ -42,17 +45,40 @@ namespace BE_XML_DataGrid_POC.Tests
         }
         #endregion
 
-        #region main
+        #region   methods
+    
+        /// <summary>
+        /// Calls all test mthods and shows result
+        /// </summary>
         public void TestAll()
         {
-            #region test service
+            
 
             testResults.Add("Service -m- Test ", testService.TestMethodTest());
             testResults.Add("Service -m- GetTableFromDB ", testService.TestMethodGetTableFromDB());
-            // testResults.Add("FileIO -m- FileOpen", testFileIO.TestOpenFile());
+            // testResults.Add("FileIO -m- FileOpen", testFileIO.TestOpenFile());                       //good to be commented out when not needed because of thread collision
             // testResults.Add("Converter-m- XMLtoClasses", testConverter.TestXMLToClasses());
+            testResults.Add("TypeCreator -m- constructor", testTypeCreator.TestClass());
+            testResults.Add("Factory -m- CreateObjectOfRType", testFactory.TestCreateObjectOfRType());
+            testResults.Add("Factory -m- CreateListOfRType", testFactory.TestCreateListOfRType());
 
-            #endregion
+
+
+            ShowResults();
+           
+        }
+
+        /// <summary>
+        /// Shows the test result in a message Box
+        /// </summary>
+        private void ShowResults()
+        {
+            string result = "";
+            foreach (var item in testResults)
+            {
+                result = result + item.Key + ":" + item.Value.ToString() + "\r\n";
+            }
+            MessageBox.Show(result);
         }
 
         #endregion

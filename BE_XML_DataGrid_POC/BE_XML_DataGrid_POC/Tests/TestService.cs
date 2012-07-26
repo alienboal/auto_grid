@@ -62,7 +62,7 @@ namespace BE_XML_DataGrid_POC.Tests
         #region Method GetTableFromDB
         public bool TestMethodGetTableFromDB()
         {
-            string sCommand = "SELECT  TOP 1 LASTNAME FROM EMPLOYEES";
+            string sCommand = "SELECT TOP 1 LASTNAME FROM EMPLOYEES";
             try
             {
                 serviceClient.GetTableFromDBCompleted += new EventHandler<ServiceReferenceDB.GetTableFromDBCompletedEventArgs>(serviceClient_GetTableFromDBCompleted);
