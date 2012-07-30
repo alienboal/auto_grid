@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
@@ -8,8 +8,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-
-using System.Collections.Generic;
+ 
 
 using BE_XML_DataGrid_POC.ServiceReferenceDB;
 using System.Reflection.Emit;
@@ -24,15 +23,14 @@ namespace BE_XML_DataGrid_POC.Persistance
     /// </summary>
     public class TypeCreator
     {
-        #region private members
+        #region private members 
         private Type newClassType;
         #endregion
 
-        #region properties
+        #region properties  
 
 
-        public Type NewClassType
-        {
+        public Type NewClassType{ 
             get
             {
                 return newClassType;
@@ -47,7 +45,7 @@ namespace BE_XML_DataGrid_POC.Persistance
 
 
         #region constructor
-        /// <summary>
+         /// <summary>
         /// Creates a new type
         /// </summary>
         /// <param name="listOfProperties">the properties of the new type</param>
@@ -59,7 +57,7 @@ namespace BE_XML_DataGrid_POC.Persistance
 
 
         #region methods
-
+            
         /// <summary>
         /// Creates the new type 
         /// </summary>
@@ -78,7 +76,7 @@ namespace BE_XML_DataGrid_POC.Persistance
             {
                 foreach (ColumnType item in listOfProperties)
                 {
-                    AddProperty(typebuilder, item.Name, Type.GetType(item.Type));
+                    AddProperty(typebuilder, item.Name, Type.GetType( item.Type) );
 
                 }
                 // Generate our type
@@ -94,7 +92,7 @@ namespace BE_XML_DataGrid_POC.Persistance
             }
             newClassType = generetedType;
         }
-
+        
         /// <summary>
         /// Adds a new property o the runtime class
         /// </summary>

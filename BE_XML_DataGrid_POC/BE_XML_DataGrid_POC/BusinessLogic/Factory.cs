@@ -8,10 +8,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using System.Collections.Generic;
+
 using BE_XML_DataGrid_POC.ServiceReferenceDB;
 using BE_XML_DataGrid_POC.Persistance;
 using System.Reflection;
+using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace BE_XML_DataGrid_POC.BusinessLogic
 {
@@ -26,7 +28,7 @@ namespace BE_XML_DataGrid_POC.BusinessLogic
 
 
 
-        public static Factory GetInstance(List<ColumnType> listOfProperties)
+        public static Factory GetInstance(ObservableCollection<ColumnType> listOfProperties)
         {
             if (singleton == null)
             {
@@ -43,7 +45,7 @@ namespace BE_XML_DataGrid_POC.BusinessLogic
 
         }
 
-        private Factory(List<ColumnType> listOfProperties)
+        private Factory(ObservableCollection<ColumnType> listOfProperties)
         {
             runtimeType = new TypeCreator(listOfProperties);
         }
@@ -86,11 +88,12 @@ namespace BE_XML_DataGrid_POC.BusinessLogic
         /// <param name="value">value of property</param>
         public void SetProperty(object instance, string name, object value)
         {
-            runtimeType.NewClassType.GetProperty(name).SetValue(instance, value, null);
+           
+            runtimeType.NewClassType.GetProperty(name).SetValue(instance,  (object)value, null);
         }
 
 
-        ////////////////////////////////LIST METHODS////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////LIST METHODS////////////////////////////////////////////////////////
 
 
 
@@ -106,6 +109,20 @@ namespace BE_XML_DataGrid_POC.BusinessLogic
             object o = Activator.CreateInstance(genericType);
             return o;
         }
+
+
+        /// <summary>
+        /// The type of List<RuntimeObject>
+        /// </summary>
+        /// <returns>The type</returns>
+        public Type GetTypeofListOfT()
+        {
+            Type listType = typeof(List<>);
+            Type[] typeArgs = { runtimeType.NewClassType };
+            Type genericType = listType.MakeGenericType(typeArgs);
+            return genericType;
+        }
+        
         /// <summary>
         /// Adds a runtime created object to the object list
         /// </summary>

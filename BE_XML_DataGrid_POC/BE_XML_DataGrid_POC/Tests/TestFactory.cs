@@ -11,6 +11,7 @@ using System.Windows.Shapes;
 using BE_XML_DataGrid_POC.BusinessLogic;
 using BE_XML_DataGrid_POC.ServiceReferenceDB;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace BE_XML_DataGrid_POC.Tests
 {
@@ -28,7 +29,7 @@ namespace BE_XML_DataGrid_POC.Tests
 
         public TestFactory()
         {
-            List<ColumnType> listOfProperties = new List<ColumnType>();
+            ObservableCollection<ColumnType> listOfProperties = new ObservableCollection<ColumnType>();
 
             ColumnType ct = new ColumnType();
             ct.Name = "name";

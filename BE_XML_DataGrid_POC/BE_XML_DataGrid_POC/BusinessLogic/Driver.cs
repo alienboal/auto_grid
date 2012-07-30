@@ -12,6 +12,7 @@ using System.Windows.Shapes;
 using BE_XML_DataGrid_POC.Tests;
 using System.IO;
 using BE_XML_DataGrid_POC.Persistance;
+using BE_XML_DataGrid_POC.BusinessLogic.GridView;
 
 namespace BE_XML_DataGrid_POC.BusinessLogic
 {
@@ -54,15 +55,16 @@ namespace BE_XML_DataGrid_POC.BusinessLogic
         
         #endregion
 
-        
+        DataGrid dgDataGrid;
         #region methods
 
         #region File IO
         /// <summary>
         /// Opens a 
         /// </summary>
-        public void ReadConfigurations()
+        public void ReadConfigurations(DataGrid dgDataGrid1)
         {
+            dgDataGrid = dgDataGrid1;
             //get adress of config xml
             FileInfo XMLfileInfo = FileIO.OpenFile();
 
@@ -75,6 +77,8 @@ namespace BE_XML_DataGrid_POC.BusinessLogic
 
                 stream.Close(); 
                 //get Querry
+                GetDBEntries( );
+
                 //create Grid
 
             }
@@ -85,12 +89,43 @@ namespace BE_XML_DataGrid_POC.BusinessLogic
             }
             
         }
+     
+        
         #endregion
 
-         
+
+        #region DB
+
+        private void GetDBEntries()
+        {
+            if (errorFlag == false)
+            {
+                ServiceReferenceDB.ServiceClient sc = new ServiceReferenceDB.ServiceClient();
+                sc.GetTableFromDBCompleted += new EventHandler<ServiceReferenceDB.GetTableFromDBCompletedEventArgs>(sc_GetTableFromDBCompleted);
+                sc.GetTableFromDBAsync(config.dbConfig.Query);
+
+            }
+
+        }
+
+        void sc_GetTableFromDBCompleted(object sender, ServiceReferenceDB.GetTableFromDBCompletedEventArgs e)
+        {
+
+            if (e.Result.Columns != null)
+            {
+                errorFlag = false;
+                GridCreator gridCreator = new GridCreator(e.Result, dgDataGrid);
+                
+            }
+
+
+        }
+
+        #endregion
+
 
         #region tests
-         
+
         public void RunTests()
         {
 
@@ -99,6 +134,7 @@ namespace BE_XML_DataGrid_POC.BusinessLogic
             testDriver.TestAll();
         }
         #endregion
+
         #endregion
     }
 }

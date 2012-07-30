@@ -16,11 +16,10 @@ namespace BE_XML_DataGrid_POC
 {
     public partial class MainPage : UserControl
     {
+
         public MainPage()
         {
-            InitializeComponent();
-
-
+            InitializeComponent(); 
         }
 
         private void btnLoadFile_Click(object sender, RoutedEventArgs e)
@@ -30,9 +29,9 @@ namespace BE_XML_DataGrid_POC
             Driver driver = Driver.GetInstance();
              
             //read file
-          //  driver.ReadConfigurations();
+            driver.ReadConfigurations(dgDataGrid);
             // run tests
-            driver.RunTests();
+           // driver.RunTests();
         }
     }
 }

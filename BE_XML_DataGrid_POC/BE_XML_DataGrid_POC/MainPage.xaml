@@ -9,7 +9,7 @@
     <Grid x:Name="LayoutRoot" Background="White">
         <StackPanel x:Name="StackPanelRoot">
             <Button x:Name="btnLoadFile" Click="btnLoadFile_Click">Load file</Button>
-            
+            <sdk:DataGrid x:Name="dgDataGrid"  Height="100" Background="Aqua"   />
         </StackPanel>
     </Grid>
 </UserControl>

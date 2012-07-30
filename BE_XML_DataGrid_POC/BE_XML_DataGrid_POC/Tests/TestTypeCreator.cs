@@ -11,6 +11,7 @@ using System.Windows.Shapes;
 using System.Collections.Generic;
 using BE_XML_DataGrid_POC.ServiceReferenceDB;
 using BE_XML_DataGrid_POC.Persistance;
+using System.Collections.ObjectModel;
 
 namespace BE_XML_DataGrid_POC.Tests
 {
@@ -19,7 +20,7 @@ namespace BE_XML_DataGrid_POC.Tests
 
         #region private members
 
-        List<ColumnType> listOfProperties;
+        ObservableCollection<ColumnType> listOfProperties;
 
         #endregion
 
@@ -28,7 +29,7 @@ namespace BE_XML_DataGrid_POC.Tests
         public TestTypeCreator()
         {
 
-            listOfProperties = new List<ColumnType>();
+            listOfProperties = new ObservableCollection<ColumnType>();
 
             ColumnType ct = new ColumnType();
             ct.Name = "name";
